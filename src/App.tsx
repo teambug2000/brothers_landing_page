@@ -1,12 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import {Tape} from './components/TickerTape'
+import  WithSubnavigation  from './components/Navbar'
+import { HeroPage } from './pages/Main'
+import StatsGridWithImage from './pages/Main'
+import LargeWithNewsletter from './components/Footer'
 import './App.css'
-import {Box} from '@chakra-ui/react'
-function App() {
+const App:React.FC = () => {
   const [count, setCount] = useState(0)
   return (
     <div className="App">
-      <Box className="pricing" w='100%' h='960px' bg='white'></Box>
+      <Tape/>
+      <WithSubnavigation/>
+      <HeroPage/>
+      <StatsGridWithImage/>
+      <LargeWithNewsletter/>
     </div>
   );
 }
