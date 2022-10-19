@@ -12,7 +12,6 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   Image,
 } from '@chakra-ui/react';
@@ -22,13 +21,12 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
-import { But } from './Button';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box pos = 'absolute'>
+    <Box pos='absolute'>
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
@@ -57,9 +55,9 @@ export default function WithSubnavigation() {
             src='Asset 2@4x.png'
             width="20%"
             objectFit="contain"
-            cursor = 'pointer'
+            cursor='pointer'
           />
-          <Flex display={{ base: 'none', md: 'flex', }} ml={10} alignItems = 'center'>
+          <Flex display={{ base: 'none', md: 'flex', }} ml={10} alignItems='center'>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -77,7 +75,6 @@ export default function WithSubnavigation() {
             href={'#'}>
             Sign In
           </Button>
-          <But/>
         </Stack>
       </Flex>
 
