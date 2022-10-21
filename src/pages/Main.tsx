@@ -7,6 +7,8 @@ import {
   Stack,
   Flex,
   SimpleGrid,
+  useBreakpointValue,
+  Image,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 export function HeroPage() {
@@ -18,7 +20,8 @@ export function HeroPage() {
           textAlign={'center'}
           spacing={{ base: 8, md: 14 }}
           py={{ base: 20, md: 40 }}
-          mt={{base:0, md:40}}>
+          mt={{base:0, md:40}}
+          mb={{base:0, md:40}}>
           <Heading
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
@@ -53,14 +56,14 @@ export function HeroPage() {
     </>
   )
 }
-export default function StatsGridWithImage() {
+export default function MainFeature() {
   return (
     <Box bg={'gray.800'} position={'relative'}>
       <Flex
         flex={1}
         zIndex={0}
         display={{ base: 'none', lg: 'flex' }}
-        backgroundImage="url('/templates/stats-grid-with-image.png')"
+        backgroundImage="url('Substrate.png')"
         backgroundSize={'cover'}
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
@@ -89,19 +92,16 @@ export default function StatsGridWithImage() {
                 mb={3}
                 fontSize={'xl'}
                 color={'gray.500'}>
-                Technology
+                Công nghệ
               </Text>
               <Heading
                 color={'white'}
                 mb={5}
                 fontSize={{ base: '3xl', md: '5xl' }}>
-                21st century agriculture
+                Substrate technology
               </Heading>
               <Text fontSize={'xl'} color={'gray.400'}>
-                The NewLife™ technology allows you to monitor your crops and get
-                complete insights at real time. The proprietary
-                software/hardware ecosystem prevents your plants from getting
-                neglected.
+                Brothers chain sử dụng nền tảng công nghệ substrate của polkadot
               </Text>
             </Box>
 
@@ -137,39 +137,90 @@ const StatsText = ({ children }: { children: ReactNode }) => (
 
 const stats = [
   {
-    title: '10+',
+    title: 'NPOS',
     content: (
       <>
-        <StatsText>Software modules</StatsText> for detailed monitoring and
-        real-time analytics
+        <StatsText>Cơ chế đồng thuận</StatsText> nhanh, an toàn và chính xác
       </>
     ),
   },
   {
-    title: '24/7',
+    title: 'Hiệu suất',
     content: (
       <>
-        <StatsText>Analytics</StatsText> enabled right in your dashboard without
-        history limitations
+        <StatsText>Cao</StatsText> mà vẫn đảm bảo an toàn cho bộ nhớ
       </>
     ),
   },
   {
-    title: '13%',
+    title: 'Tương thích',
     content: (
       <>
-        <StatsText>Farms</StatsText> in North America has chosen NewLife™ as
-        their management solution
+        <StatsText>EVM</StatsText> dễ dàng tích hợp với Ethereum chain, EVM smart contract
       </>
     ),
   },
   {
-    title: '250M+',
+    title: 'BFT',
     content: (
       <>
-        <StatsText>Plants</StatsText> currently connected and monitored by the
-        NewLife™ software
+        <StatsText>Thuật toán</StatsText> đảm bảo blockchain hoạt động bình thường ngay cả khi một số node bị lỗi
       </>
     ),
   },
 ];
+export function WhatToBuild() {
+  return (
+    <Box bg={'gray.800'} position={'relative'}>
+      <Flex
+        flex={1}
+        zIndex={0}
+        display={{ base: 'none', lg: 'flex' }}
+        backgroundImage="url('Substrate.png')"
+        backgroundSize={'cover'}
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        position={'absolute'}
+        width={'50%'}
+        insetY={0}
+        right={0}>
+        <Flex
+          bgGradient={'linear(to-r, gray.800 10%, transparent)'}
+          w={'full'}
+          h={'full'}
+        />
+      </Flex>
+      <Container maxW={'7xl'} zIndex={10} position={'relative'}>
+        <Stack direction={{ base: 'column', lg: 'row' }}>
+          <Stack
+            flex={1}
+            color={'gray.400'}
+            justify={{ lg: 'center' }}
+            py={{ base: 4, md: 20, xl: 60 }}>
+            <Box mb={{ base: 8, md: 20 }}>
+              <Text
+                fontFamily={'heading'}
+                fontWeight={700}
+                textTransform={'uppercase'}
+                mb={3}
+                fontSize={'xl'}
+                color={'gray.500'}>
+                Công nghệ
+              </Text>
+              <Heading
+                color={'white'}
+                mb={5}
+                fontSize={{ base: '3xl', md: '5xl' }}>
+                Substrate technology
+              </Heading>
+              <Text fontSize={'xl'} color={'gray.400'}>
+                Brothers chain sử dụng nền tảng công nghệ substrate của polkadot
+              </Text>
+            </Box>
+          </Stack>
+          <Flex flex={1} />
+        </Stack>
+      </Container>
+    </Box>
+  );
+}

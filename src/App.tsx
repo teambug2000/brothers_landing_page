@@ -2,7 +2,8 @@ import { useState } from 'react'
 import {Tape} from './components/TickerTape'
 import  WithSubnavigation  from './components/Navbar'
 import { HeroPage } from './pages/Main'
-import StatsGridWithImage from './pages/Main'
+import MainFeature from './pages/Main'
+import {WhatToBuild} from'./pages/Main'
 import LargeWithNewsletter from './components/Footer'
 import './App.css'
 const App:React.FC = () => {
@@ -12,7 +13,7 @@ const App:React.FC = () => {
       <Tape/>
       <WithSubnavigation/>
       <HeroPage/>
-      <StatsGridWithImage/>
+      <MainFeature/>
       <LargeWithNewsletter/>
     </div>
   );
